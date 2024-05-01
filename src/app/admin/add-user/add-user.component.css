@@ -1,0 +1,56 @@
+.container{
+
+    margin: 5px 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+   
+}
+
+h2{
+
+    margin: 5px;
+    color: #333;
+}
+.add-item{
+
+    margin: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.add-item input{
+
+    width: 300px;
+
+padding: 5px;
+    
+}
+
+.container button{
+
+    padding: 10px;
+
+    border: none;
+
+    color:#fff;
+
+    font-size: 15px;
+
+    background-color: #203354;
+margin-top: 20px;
+
+    width: 300px;
+
+    cursor:pointer;
+}
+
+.add-item select{
+
+    width: 300px;
+    padding: 5px;
+}
