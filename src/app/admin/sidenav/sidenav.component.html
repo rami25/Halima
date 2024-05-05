@@ -1,20 +1,24 @@
 <div class="container">
 
 
-    <h2>Medics Venns</h2>
+    <h2>TUN TRUST</h2>
 
     <ul>
 
         <li routerLink="/admin" routerLinkActive><fa-icon [icon]="faHome" class="icon"></fa-icon> Home</li>
 
-        <li routerLink="/admin/doctors" routerLinkActive><fa-icon [icon]="faUser" class="icon"></fa-icon> Users</li>
+        <li routerLink="/admin" routerLinkActive><fa-icon [icon]="faDot" class="icon"></fa-icon>New Query</li>
 
-        <li routerLink="/admin/doctors" routerLinkActive><fa-icon [icon]="faUserDoctor" class="icon"></fa-icon> Doctors</li>
+        <li routerLink="/admin" routerLinkActive><fa-icon [icon]="faDot" class="icon"></fa-icon>Certificates</li>
+
+        <li routerLink="/admin/users" routerLinkActive><fa-icon [icon]="faUser" class="icon"></fa-icon> Users</li>
+
+        <!-- <li routerLink="/admin/doctors" routerLinkActive><fa-icon [icon]="faUserDoctor" class="icon"></fa-icon> Doctors</li> -->
 
         <li routerLink="/admin/adduser" routerLinkActive ><fa-icon [icon]="faAdd" class="icon"></fa-icon> Add User</li>
         
 
-        <li routerLink="/admin/home" routerLinkActive><fa-icon [icon]="faDot" class="icon"></fa-icon>Block</li>
+        <li routerLink="/admin" routerLinkActive><fa-icon [icon]="faDot" class="icon"></fa-icon>Block</li>
 
         <li (click)="LogOut()"><fa-icon [icon]="logout" class="icon" ></fa-icon>Logout</li>
     </ul>

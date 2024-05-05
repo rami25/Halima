@@ -8,10 +8,15 @@ export interface RegisterUser{
     issent?:number
 }
 
+export  interface User{
+    _id? : string,
+    nom : string,
+    email : string,
+    password : string
+}
 export  interface LoginUser{
 
-    email:string,
-
+    login:string,
     password:string,
 
     

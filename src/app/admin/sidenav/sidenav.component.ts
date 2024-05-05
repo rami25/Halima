@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faHome,faUser,faUserDoctor,faAdd,faDotCircle,faSignOut } from '@fortawesome/free-solid-svg-icons';
@@ -14,17 +15,23 @@ faAdd=faAdd;
 faDot=faDotCircle;
 logout=faSignOut
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private authService : AuthService) { }
 
   ngOnInit(): void {
   }
   
   
   LogOut(){
-
     localStorage.clear();
     this.router.navigate(['/']);
-    
-
+    this.authService.logout()
+    .subscribe(
+      (res) => {
+        console.log(res);
+        alert(res.msg);
+      },
+      (err) => {
+        alert(err.message);
+      });
   }
 }

@@ -27,17 +27,17 @@
           "
         >
           <div class="patient-container">
-            <span>{{user.name}}</span>
+            <span>{{user.nom}}</span>
 
             <span>{{user.email}}</span>
 
-            <span>{{user.role}}</span>
+            <!-- <span>{{user.role}}</span> -->
 
             <span>MRV194526491</span>
 
             <span>3452728282882</span>
 
-            <span class="add-diagnosis" (click)="showAdd(user.id)">Delete</span>
+            <span class="add-diagnosis" (click)="showAdd(user._id)">Delete</span>
           </div>
         </div>
       </div>

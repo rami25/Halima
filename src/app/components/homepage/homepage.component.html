@@ -42,7 +42,7 @@
 
   <div class="teams">
     <div class="teams-header">
-      <h1 style="25px; color : blue"><b>NOS PRODUITS</b></h1>
+      <h1 style="font-size : 25px; color: blue"><b>NOS PRODUITS</b></h1>
     </div>
 
     <div class="teams-details">
@@ -153,11 +153,10 @@ La signature de code vérifie l'identité de l'émetteur d'un jeu de codes spéc
 
             <h1>S'authentifier</h1>
 
-            <input type="text" placeholder="Enter email" ngModel name="email" email required #email="ngModel">
+            <input type="text" placeholder="Enter Login" ngModel name="login" login required #login="ngModel">
             <input type="password" placeholder="Enter Password" ngModel name="password" required #password="ngModel">
             <button class="btn-login medical"  [disabled]="!form.valid">Login</button>
 
-            <!-- <span (click) = "helpRegister()">Ask to be registered.</span> -->
         </div>
 
     </div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faAdd } from '@fortawesome/free-solid-svg-icons';
 import { Observable} from 'rxjs';
-import { RegisterUser } from 'src/app/interfaces/User';
+import { User } from 'src/app/interfaces/User';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -12,7 +12,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class DoctorsComponent implements OnInit {
 
   constructor(private authService:AuthService) { }
-  users$!:Observable<RegisterUser[]>;
+  users$!:Observable<User[]>;
   ngOnInit(): void {
 
     this.getUsers();

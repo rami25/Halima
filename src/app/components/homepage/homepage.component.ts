@@ -15,11 +15,7 @@ export class HomepageComponent implements OnInit {
 
   constructor(private router: Router, private authService: AuthService) {}
 
-  ngOnInit(): void {
-    // setTimeout(() => {
-    //   this.login = true;
-    // }, 200000);
-  }
+  ngOnInit(): void { }
 
   showLogin(condition: string) {
     if (condition === 'open') {
@@ -29,51 +25,18 @@ export class HomepageComponent implements OnInit {
     }
   }
 
-  helpRegister() {
-    this.router.navigate(['help/register']);
-  }
-
   onSubmit() {
-    this.authService.signIn(this.form.value).subscribe((res) => {
-
-
-      console.log(res)
-
-      if (res.message === 'wrong password') {
-      } else if ((res.message = 'not found')) {
-      }
-
-      if (res.user.role === 'patient') {
-        localStorage.setItem('token', res.token);
-        localStorage.setItem('user', JSON.stringify(res.user));
-
-        this.router.navigate(['/patient']);
-      } else if (res.user.role === 'finance') {
-        localStorage.setItem('token', res.token);
-        localStorage.setItem('user', JSON.stringify(res.user));
-
-        this.router.navigate(['/finance']);}
-      
-        else if (res.user.role === 'reception') {
-          localStorage.setItem('token', res.token);
-          localStorage.setItem('user', JSON.stringify(res.user));
-  
-          this.router.navigate(['/reception']);}
-      
-      else if (res.user.role === 'admin') {
-        localStorage.setItem('token', res.token);
-        localStorage.setItem('user', JSON.stringify(res.user));
-
+    console.log(this.form.value);
+    this.authService.signIn(this.form.value)
+    .subscribe(
+      (res) => {
+        console.log(res);
+        localStorage.setItem('token', res.jwt)
+        alert('welcome '+ res.existing.login);
         this.router.navigate(['/admin']);
-      } else if (res.message === 'wrong password') {
-        console.log(res.message);
-      } else {
-        this.router.navigate(['/auth/login']);
-      }
-
-      if (res.message) {
-        console.log('wrong password');
-      }
-    });
+      },
+      (err) => {
+        alert(err.message);
+      });
   }
 }
