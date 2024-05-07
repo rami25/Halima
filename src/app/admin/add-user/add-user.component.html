@@ -1,7 +1,7 @@
 <div class="container">
 
     <form action="" [formGroup]="form" (ngSubmit)="onSubmit()">
-    <h2>Add User</h2>
+    <h2 style="margin-left:20px">Add User</h2>
 
     <div class="add-item">
 
@@ -19,9 +19,16 @@
 
     <div class="add-item">
 
-        <label for="">Password(User Id no)</label>
+        <label for="">Password</label>
 
-        <input type="text" formControlName="password">
+        <input type="password" formControlName="password">
+    </div>
+
+    <div class="add-item">
+
+        <label for="">Confirm Password</label>
+
+        <input type="password" formControlName="cpassword">
     </div>
 
   <div class="add-item">
@@ -31,14 +38,11 @@
         <select name="" id="" (change)="selectRole($event)" selected>
 
             <option value="admin">Admin</option>
-            <option value="patient">Patient</option>
-            <option value="reception">Reception</option>
-            <option value="finance">Finance</option>
-            <option value="doctor">Doctor</option>
+            <option value="client">Client</option>
         </select>
     </div>
 
 
-    <button [disabled]="!form.valid">Submit</button>
+    <button style="margin-left:20px" [disabled]="!form.valid">Submit</button>
 </form>
 </div>

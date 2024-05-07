@@ -24,14 +24,5 @@ logout=faSignOut
   LogOut(){
     localStorage.clear();
     this.router.navigate(['/']);
-    this.authService.logout()
-    .subscribe(
-      (res) => {
-        console.log(res);
-        alert(res.msg);
-      },
-      (err) => {
-        alert(err.message);
-      });
   }
 }

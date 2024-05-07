@@ -19,14 +19,14 @@ export class HomeComponent implements OnInit {
       type: 'line'
     },
     title: {
-      text: 'Patients'
+      text: 'Users'
     },
     credits: {
       enabled: false
     },
     series: [
       {
-        name: 'Patients admitted',
+        name: 'Users admitted',
         data: [10, 2, 3,6,9,17,20,10,5,2,16]
       } as any
     ]
@@ -69,13 +69,13 @@ export class HomeComponent implements OnInit {
       {
         type: 'pie',
         data: [
-          { name: 'COVID 19', y: 1, color: '#eeeeee' },
+          { name: 'ID-TRUST', y: 1, color: '#eeeeee' },
   
-          { name: 'HIV/AIDS', y: 2, color: '#393e46' },
+          { name: 'SAN-SSL', y: 2, color: '#393e46' },
   
-          { name: 'EBOLA', y: 3, color: '#00adb5' },
-          { name: 'DISPORA', y: 4, color: '#eeeeee' },
-          { name: 'DIABETES', y: 5, color: '#506ef9' },
+          { name: 'Cachet', y: 3, color: '#00adb5' },
+          { name: 'VPN', y: 4, color: '#eeeeee' },
+          { name: 'SSL-CACHET', y: 5, color: '#506ef9' },
         ],
       },
     ],

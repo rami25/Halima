@@ -7,15 +7,15 @@
 
       <span>Role</span>
 
-      <span>Security No</span>
-
-      <span>Id no</span>
+      <span>Id</span>
 
       <span>Delete</span>
+
+      <span>Update</span>
     </div>
 
     <div class="search">
-      <input type="text" placeholder="Search patient by Id no" />
+      <input type="text" placeholder="Search User" />
     </div>
 
     <!-- <div class="orders-body" *ngIf="users$ | async as users"> -->
@@ -32,13 +32,13 @@
 
             <span>{{user.email}}</span>
 
-            <!-- <span>{{user.role}}</span> -->
+            <span>Client</span>
 
             <span>MRV194526491</span>
 
-            <span>3452728282882</span>
-
             <span class="add-diagnosis" (click)="showAdd(user._id)">Delete</span>
+
+            <span class="u-diagnosis" (click)="showAdd1(user._id)">Update</span>
           </div>
         </div>
       </div>
@@ -65,6 +65,49 @@
 
           <button class="delete" (click)="deleteUser()">Delete</button>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="treatment" *ngIf="close1">
+    <div class="add-treatment">
+      <div class="delete-item">
+
+      <form action="" [formGroup]="form" (ngSubmit)="updateUser()">
+      <h2 style="margin-left:80px">Update User</h2>
+
+      <div class="add-item">
+
+          <label for="">Name</label>
+
+          <input type="text" formControlName="name">
+      </div>
+
+      <div class="add-item" style="margin-left:2px; margin-top:20px; margin-bottom: 30px;">
+
+          <label for="">Email</label>
+
+          <input type="text"  formControlName="email">
+      </div>
+
+    <div style="margin-left:20px" class="add-item">
+
+          <label for="">Role</label>
+
+          <select name="" id="" (change)="selectRole($event)" selected>
+
+              <option value="admin">Admin</option>
+              <option value="client">Client</option>
+          </select>
+      </div>
+
+
+        <div class="delete-cancel" style="margin-left:20px; margin-top:30px">
+          <button class="cancel" (click)="showAdd1(1233)">Cancel</button>
+
+          <button class="delete" style="background-color: gray;" [disabled]="!form.valid">Update</button>
+        </div>
+  </form>
       </div>
     </div>
   </div>

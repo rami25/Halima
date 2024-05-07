@@ -1,13 +1,12 @@
 export interface RegisterUser{
-
-    id?:number,
+    nom:string,
     email:string,
     password:string,
-    role:string,
-    name:string,
-    issent?:number
 }
-
+export interface uUser {
+    nom : string,
+    email : string
+}
 export  interface User{
     _id? : string,
     nom : string,

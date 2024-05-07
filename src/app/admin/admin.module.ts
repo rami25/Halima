@@ -38,12 +38,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule
   
   ],
-  providers : [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptorService,
-      multi: true
-    }  
-  ]
+  providers : [ ]
 })
 export class AdminModule { }
