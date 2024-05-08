@@ -16,6 +16,7 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { ChartModule } from 'angular-highcharts';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DemandeComponent } from './demande/demande.component';
+import { CommentsComponent } from './comments/comments.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { DemandeComponent } from './demande/demande.component';
     UsersComponent,
     AddUserComponent,
     DemandeComponent,
+    CommentsComponent,
     
   ],
   imports: [

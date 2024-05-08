@@ -1,0 +1,50 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="patient-header">
+      <span>User Name</span>
+
+      <span>Comment</span>
+
+      <span>Date</span>
+
+      <span>  </span>
+
+      <span> </span>
+
+      <span> </span>
+    </div>
+
+    <div class="orders-body" *ngIf="comments">
+      <div *ngIf="comments.length; else noComment">
+        <div
+          class="patient-body"
+          *ngFor="
+            let comment of comments | paginate: { itemsPerPage: 5, currentPage: p }
+          "
+        >
+          <div class="patient-container">
+            <span>{{comment.nom}}</span>
+
+            <span>{{comment.commentaire}}</span>
+
+            <span>Client</span>
+
+            <span>{{comment.date}}</span>
+
+          </div>
+        </div>
+      </div>
+      <pagination-controls
+      (pageChange)="p = $event"
+      class="pagination"
+    ></pagination-controls>
+     
+    </div>
+
+    
+  </div>
+
+  <ng-template #noComment>
+    <h1>No Comments</h1>
+  </ng-template>
+</div>
