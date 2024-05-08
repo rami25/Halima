@@ -12,9 +12,8 @@ export class AuthService {
   private apiServerUrl = environment.apiBaseUrl
 
   constructor(private http:HttpClient) { }
-  getComments(ids: string[]): Observable<any> {
-    const idsParam = ids.join(',');
-    return this.http.get<any>(`${this.apiServerUrl}/comments?ids=${idsParam}`);
+  getComments(): Observable<any> {
+    return this.http.get<any>(`${this.apiServerUrl}/admin/comments`);
   }  
   getCertifs(ids : string[]) : Observable<any> {
     const idsParam = ids.join(',');
