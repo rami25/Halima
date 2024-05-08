@@ -1,0 +1,87 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="patient-header">
+      <span>Certificat</span>
+
+      <span>Nom</span>
+
+      <span>Email</span>
+
+      <span>CIN</span>
+
+      <span>GSM</span>
+
+      <span>Update</span>
+
+      <span>Delete</span>
+    </div>
+
+
+    <div class="orders-body" *ngIf="certifs">
+      <div *ngIf="certifs.length; else noCertif">
+        <div
+          class="patient-body"
+          *ngFor="
+            let certif of certifs | paginate: { itemsPerPage: 5, currentPage: p }
+          "
+        >
+          <div class="patient-container">
+            <span>{{certif.certificat}}</span>
+
+            <span>{{certif.nom}}</span>
+
+            <span>{{certif.email}}</span>
+
+            <span>Client</span>
+
+            <span>MRV194526491</span>
+
+            <span class="add-diagnosis" (click)="showAdd(certif._id)">Delete</span>
+
+            <span class="u-diagnosis" (click)="showAdd1(certif._id)">Update</span>
+          </div>
+        </div>
+      </div>
+      <pagination-controls
+      (pageChange)="p = $event"
+      class="pagination"
+    ></pagination-controls>
+     
+    </div>
+
+    
+  </div>
+
+  <ng-template #noCertif>
+    <h1>No Demande</h1>
+  </ng-template>
+
+  <div class="treatment" *ngIf="close">
+    <div class="add-treatment">
+      <div class="delete-item">
+        <span>Are you sure you want to delete this user?</span>
+
+        <div class="delete-cancel">
+          <button class="cancel" (click)="showAdd(1233)">Cancel</button>
+
+          <button class="delete" (click)="deleteCertif()">Delete</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="treatment" *ngIf="close1">
+    <div class="add-treatment">
+      <div class="delete-item">
+
+        <div class="delete-cancel" style="margin-left:45px; margin-top:30px">
+          <button class="cancel" (click)="showAdd1(1233)">Cancel</button>
+
+          <button class="delete" style="background-color: green;" (click)="acceptCertif()" >Accepte</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

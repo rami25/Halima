@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { AdminService } from 'src/app/services/admin.service';
 import { ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
@@ -13,7 +14,7 @@ export class HomepageComponent implements OnInit {
   login: boolean = false;
   @ViewChild('form') form!: NgForm;
 
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(private router: Router, private authService: AuthService, private adminService : AdminService) {}
 
   ngOnInit(): void { }
 
@@ -33,6 +34,7 @@ export class HomepageComponent implements OnInit {
         console.log(res);
         localStorage.setItem('token', res.jwt)
         alert('welcome '+ res.existing.login);
+        this.adminService.setAdmin(res.existing)
         this.router.navigate(['/admin']);
       },
       (err) => {

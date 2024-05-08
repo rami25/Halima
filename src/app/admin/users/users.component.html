@@ -14,9 +14,9 @@
       <span>Update</span>
     </div>
 
-    <div class="search">
+    <!-- <div class="search">
       <input type="text" placeholder="Search User" />
-    </div>
+    </div> -->
 
     <!-- <div class="orders-body" *ngIf="users$ | async as users"> -->
     <div class="orders-body" *ngIf="users">
@@ -90,7 +90,7 @@
           <input type="text"  formControlName="email">
       </div>
 
-    <div style="margin-left:20px" class="add-item">
+    <!-- <div style="margin-left:20px" class="add-item">
 
           <label for="">Role</label>
 
@@ -99,10 +99,10 @@
               <option value="admin">Admin</option>
               <option value="client">Client</option>
           </select>
-      </div>
+      </div> -->
 
 
-        <div class="delete-cancel" style="margin-left:20px; margin-top:30px">
+        <div class="delete-cancel" style="margin-left:45px; margin-top:30px">
           <button class="cancel" (click)="showAdd1(1233)">Cancel</button>
 
           <button class="delete" style="background-color: gray;" [disabled]="!form.valid">Update</button>

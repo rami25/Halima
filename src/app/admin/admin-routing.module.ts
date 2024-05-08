@@ -5,6 +5,7 @@ import { AddUserComponent } from './add-user/add-user.component';
 
 import { AdminComponent } from './admin.component';
 import { DoctorsComponent } from './doctors/doctors.component';
+import { DemandeComponent } from './demande/demande.component';
 import { UsersComponent } from './users/users.component';
 import { HomeComponent } from './home/home.component';
 
@@ -18,7 +19,10 @@ const routes: Routes = [
         path: '',
         component: HomeComponent,
       },
-
+      {
+        path: 'demandes',
+        component: DemandeComponent,
+      },
       {
         path: 'doctors',
         component: DoctorsComponent,

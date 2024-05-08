@@ -13,7 +13,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class UsersComponent implements OnInit {
   form!: FormGroup;
-  role!:string;
+  // role!:string;
   name!:string;
   email!:string;
 
@@ -73,11 +73,11 @@ export class UsersComponent implements OnInit {
     window.location.reload();
   }
 
-  selectRole(event:any){
+  // selectRole(event:any){
 
-    this.role=event.target.value;
+  //   this.role=event.target.value;
 
-  }
+  // }
   updateUser(){
     this.name=this.form.value.name;
     this.email=this.form.value.email;

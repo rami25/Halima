@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class AddUserComponent implements OnInit {
   form!: FormGroup;
-  role!:string;
+  // role!:string;
 
   name!:string;
   email!:string;
@@ -26,11 +26,11 @@ export class AddUserComponent implements OnInit {
     });
   }
 
-  selectRole(event:any){
+  // selectRole(event:any){
 
-    this.role=event.target.value;
+  //   this.role=event.target.value;
 
-  }
+  // }
 
   onSubmit() {
     this.name=this.form.value.name;

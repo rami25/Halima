@@ -12,7 +12,14 @@ export class AuthService {
   private apiServerUrl = environment.apiBaseUrl
 
   constructor(private http:HttpClient) { }
-
+  getComments(ids: string[]): Observable<any> {
+    const idsParam = ids.join(',');
+    return this.http.get<any>(`${this.apiServerUrl}/comments?ids=${idsParam}`);
+  }  
+  getCertifs(ids : string[]) : Observable<any> {
+    const idsParam = ids.join(',');
+    return this.http.get<any>(`${this.apiServerUrl}/certifs?ids=${idsParam}`);    
+  }
   registerUser(user:RegisterUser):Observable<any>{
     return this.http.post<any>(`${this.apiServerUrl}/admin/add_user`, user)
   }

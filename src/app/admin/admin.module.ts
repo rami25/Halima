@@ -15,6 +15,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { AddUserComponent } from './add-user/add-user.component';
 import { ChartModule } from 'angular-highcharts';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DemandeComponent } from './demande/demande.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DoctorsComponent,
     UsersComponent,
     AddUserComponent,
+    DemandeComponent,
     
   ],
   imports: [
