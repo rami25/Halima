@@ -1,3 +1,10 @@
+.teams-header{
+  margin-right: 50px;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .container {
   max-width: 1024px;
   position: relative;
@@ -64,6 +71,13 @@
   justify-content: space-evenly;
   align-items: center;
   margin: 30px;
+}
+.data {
+  width: 20%; 
+  padding-bottom : 20px;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
 }
 
 .pagination {
@@ -195,7 +209,7 @@
 }
 
 .u-diagnosis {
-  background-color: gray;
+  background-color: green;
 
   padding: 5px;
   width: 50px;

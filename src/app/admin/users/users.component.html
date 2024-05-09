@@ -1,17 +1,18 @@
+<div class="teams-header">
+  <h1 style="font-size : 25px; color: rgb(50, 50, 124)"><b>USERS</b></h1>
+</div>
 <div class="wrapper">
   <div class="container">
     <div class="patient-header">
-      <span>Name</span>
+      <span style="position: relative; right : 50px">Name</span>
 
       <span>Email</span>
 
-      <span>Role</span>
+      <span style="position: relative; left : 50px">Role</span>
 
-      <span>Id</span>
+      <span style="position: relative; left : 110px">Delete</span>
 
-      <span>Delete</span>
-
-      <span>Update</span>
+      <span style="position: relative; left : 35px">Update</span>
     </div>
 
     <div class="orders-body" *ngIf="users">
@@ -19,21 +20,19 @@
         <div
           class="patient-body"
           *ngFor="
-            let user of users | paginate: { itemsPerPage: 5, currentPage: p }
+            let user of users | paginate: { itemsPerPage: 4, currentPage: p }
           "
         >
           <div class="patient-container">
-            <span>{{user.nom}}</span>
+            <span class="data">{{user.nom}}</span>
 
-            <span>{{user.email}}</span>
+            <span class="data">{{user.email}}</span>
 
-            <span>Client</span>
+            <span class="data">Client</span>
 
-            <span>MRV194526491</span>
+            <span class="add-diagnosis data" (click)="showAdd(user._id)">Delete</span>
 
-            <span class="add-diagnosis" (click)="showAdd(user._id)">Delete</span>
-
-            <span class="u-diagnosis" (click)="showAdd1(user._id)">Update</span>
+            <span class="u-diagnosis data" (click)="showAdd1(user._id)">Update</span>
           </div>
         </div>
       </div>

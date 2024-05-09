@@ -15,9 +15,8 @@ export class AuthService {
   getComments(): Observable<any> {
     return this.http.get<any>(`${this.apiServerUrl}/admin/comments`);
   }  
-  getCertifs(ids : string[]) : Observable<any> {
-    const idsParam = ids.join(',');
-    return this.http.get<any>(`${this.apiServerUrl}/certifs?ids=${idsParam}`);    
+  getCertifs() : Observable<any> {
+    return this.http.get<any>(`${this.apiServerUrl}/admin/certifs`);
   }
   registerUser(user:RegisterUser):Observable<any>{
     return this.http.post<any>(`${this.apiServerUrl}/admin/add_user`, user)

@@ -1,19 +1,28 @@
+<div class="teams-header">
+  <h1 style="font-size : 25px; color: rgb(50, 50, 124)"><b>DEMANDES</b></h1>
+</div>
 <div class="wrapper">
   <div class="container">
     <div class="patient-header">
-      <span>Certificat</span>
+      <span style="position: relative; right : 50px">Certificat</span>
 
-      <span>Nom</span>
+      <span style="position: relative; right : 50px">First Name</span>
 
-      <span>Email</span>
+      <span style="position: relative; right : 60px">Last Name</span>
 
-      <span>CIN</span>
+      <span style="position: relative; right : 50px">Email</span>
 
-      <span>GSM</span>
+      <span style="position: relative; left : 0px">CIN</span>
 
-      <span>Update</span>
+      <span style="position: relative; left : 30px">GSM</span>
 
-      <span>Delete</span>
+      <span style="position: relative; left : 70px">Date</span>
+
+      <span style="position: relative; left : 100px">Duration</span>
+
+      <span style="position: relative; left : 100px">Accept</span>
+
+      <span style="position: relative; left : 60px">Reject</span>
     </div>
 
 
@@ -26,19 +35,25 @@
           "
         >
           <div class="patient-container">
-            <span>{{certif.certificat}}</span>
+            <span class="data">{{certif.certificat}}</span>
 
-            <span>{{certif.nom}}</span>
+            <span class="data">{{certif.nom}}</span>
 
-            <span>{{certif.email}}</span>
+            <span class="data">{{certif.prenom}}</span>
 
-            <span>Client</span>
+            <span class="data">{{certif.email}}</span>
+            
+            <span class="data">{{certif.cin}}</span>
+            
+            <span class="data">{{certif.gsm}}</span>
 
-            <span>MRV194526491</span>
+            <span class="data">{{certif.date | date:'dd/MM/yyyy'}}</span>
 
-            <span class="add-diagnosis" (click)="showAdd(certif._id)">Delete</span>
+            <span class="data">{{certif.duree}}</span>
 
-            <span class="u-diagnosis" (click)="showAdd1(certif._id)">Update</span>
+            <span class="u-diagnosis data" (click)="showAdd1(certif._id)">Accept</span>
+
+            <span class="add-diagnosis data" (click)="showAdd(certif._id)">Reject</span>
           </div>
         </div>
       </div>
@@ -59,7 +74,7 @@
   <div class="treatment" *ngIf="close">
     <div class="add-treatment">
       <div class="delete-item">
-        <span>Are you sure you want to delete this user?</span>
+        <span>Are you sure you want to reject this demande?</span>
 
         <div class="delete-cancel">
           <button class="cancel" (click)="showAdd(1233)">Cancel</button>
@@ -74,8 +89,9 @@
   <div class="treatment" *ngIf="close1">
     <div class="add-treatment">
       <div class="delete-item">
+        <span>Are you sure you want to accept this demande?</span>
 
-        <div class="delete-cancel" style="margin-left:45px; margin-top:30px">
+        <div class="delete-cancel">
           <button class="cancel" (click)="showAdd1(1233)">Cancel</button>
 
           <button class="delete" style="background-color: green;" (click)="acceptCertif()" >Accepte</button>

@@ -13,11 +13,9 @@ import { Certif } from 'src/app/interfaces/Certif';
 export class DemandeComponent implements OnInit {
 
   certifs! : Certif[]
-  admin! : any
   constructor(private authService:AuthService, private adminService : AdminService) { }
 
   ngOnInit(): void {
-    this.admin = this.adminService.getAdmin()
     this.getCertifs();
   }
   p: number = 1;
@@ -37,8 +35,7 @@ export class DemandeComponent implements OnInit {
   }
 
   getCertifs(){
-    const ids = this.admin.certifs
-    this.authService.getCertifs(ids)
+    this.authService.getCertifs()
       .subscribe(certificates => {
         this.certifs = certificates;
     });    

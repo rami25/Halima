@@ -1,3 +1,10 @@
+.teams-header{
+  margin-right: 50px;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .container {
   max-width: 1024px;
   position: relative;
@@ -26,7 +33,12 @@
 
   background-color: #203354;
 }
-
+.datah {
+  width: 20%; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
+}
 .add {
   display: flex;
   justify-content: flex-end;
@@ -64,7 +76,16 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin: 30px;
+  margin: 50px 80px;
+  border-bottom: 1px solid #ccc;
+}
+
+.data {
+  width: 20%; 
+  padding-bottom : 20px;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
 }
 
 .pagination {
