@@ -12,41 +12,32 @@
 
     <div class="newuser">
 
-        <h2>New User</h2>
+        <h2>Available Certif</h2>
 
         <ol>
-            <li>John Doe</li>
+            <li>SSL-Cachet</li>
 
-            <li>Jane Doe</li>
+            <li>ID-Trust</li>
 
-            <li>Loise Young</li>
+            <li>SAN-SSL</li>
 
-            <li>Jayson Duff</li>
+            <li>VPN</li>
         </ol>
 
     </div>
 
-    <div class="requests">
+    <div class="newuser">
 
-        <h2>Requests</h2>
+        <h2 *ngIf="certifs.length; else noCertif">Requests</h2>
 
-        <div class="request-item">
-            <span>John Doe</span>
-            <button>Approve</button>
+        <div *ngFor="let certif of certifs">
+            <div class="request-item">
+                <span>{{certif.nom}}</span>
+                <button routerLink="/admin/demandes">Check</button>
+            </div>
         </div>
-
-        <div class="request-item">
-            <span>Loise Doe</span>
-            <button>Approve</button>
-        </div>
-
-        <div class="request-item">
-            <span>Jane Doe</span>
-            <button>Approve</button>
-        </div>
-        <div class="request-item">
-            <span>Lisper Doe</span>
-            <button>Approve</button>
-        </div>
+        <ng-template #noCertif>
+            <h1>No Request</h1>
+        </ng-template>
     </div>
 </div>

@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faAdd } from '@fortawesome/free-solid-svg-icons';
-import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
-import { AdminService } from 'src/app/services/admin.service';
 import { Certif } from 'src/app/interfaces/Certif';
 
 @Component({
@@ -13,7 +10,7 @@ import { Certif } from 'src/app/interfaces/Certif';
 export class DemandeComponent implements OnInit {
 
   certifs! : Certif[]
-  constructor(private authService:AuthService, private adminService : AdminService) { }
+  constructor(private authService:AuthService) {}
 
   ngOnInit(): void {
     this.getCertifs();
@@ -22,7 +19,6 @@ export class DemandeComponent implements OnInit {
   collection: any[] = [1];
   close: boolean = false;
   close1: boolean = false;
-  faAdd = faAdd;
   id!:any;
 
   showAdd(id:any) {
@@ -41,13 +37,20 @@ export class DemandeComponent implements OnInit {
     });    
   }
 
+  removeCertif(){
+    return this.certifs.filter(certif => certif._id !== this.id);
+  }
   deleteCertif(){
-
+    this.authService.ansCertif({_id : this.id, ans : 'rejected'}).subscribe()
     this.close=!this.close;
+    this.removeCertif();
     window.location.reload();
   }
 
   acceptCertif(){
-    window.location.reload()
+    this.authService.ansCertif({_id : this.id, ans : 'accepted'}).subscribe()
+    this.close1=!this.close1;
+    this.removeCertif();
+    window.location.reload();
   }
 }

@@ -1,0 +1,74 @@
+<div class="teams-header">
+  <h1 style="font-size : 25px; color: rgb(50, 50, 124)"><b>HISTORY</b></h1>
+</div>
+<div class="wrapper">
+  <div class="container">
+    <div class="patient-header">
+      <span style="position: relative; right : 50px">Certificat</span>
+
+      <span style="position: relative; right : 60px">First Name</span>
+
+      <span style="position: relative; right : 75px">Last Name</span>
+
+      <span style="position: relative; right : 80px">Email</span>
+
+      <span style="position: relative; right : 50px">CIN</span>
+
+      <span style="position: relative; right : 30px">GSM</span>
+
+      <span style="position: relative; right : 0px">Date</span>
+
+      <span style="position: relative; left : 30px">Duration</span>
+
+      <span style="position: relative; left : 25px">Status</span>
+
+      <span style="position: relative; left : 40px">Requested At</span>
+    </div>
+
+
+    <div class="orders-body" *ngIf="certifs">
+      <div *ngIf="certifs.length; else noCertif">
+        <div
+          class="patient-body"
+          *ngFor="
+            let certif of certifs | paginate: { itemsPerPage: 5, currentPage: p }
+          "
+        >
+          <div class="patient-container">
+            <span class="data">{{certif.certificat}}</span>
+
+            <span class="data">{{certif.nom}}</span>
+
+            <span class="data">{{certif.prenom}}</span>
+
+            <span class="data">{{certif.email}}</span>
+            
+            <span class="data">{{certif.cin}}</span>
+            
+            <span class="data">{{certif.gsm}}</span>
+
+            <span class="data">{{certif.date | date:'dd/MM/yyyy'}}</span>
+
+            <span class="data">{{certif.duree | date:'dd/MM/yyyy'}}</span>
+
+            <span class="data">{{certif.status}}</span>
+
+            <span class="data">{{certif.answerDate | date: 'dd/MM/yyyy'}}</span>
+          </div>
+        </div>
+      </div>
+      <pagination-controls
+      (pageChange)="p = $event"
+      class="pagination"
+    ></pagination-controls>
+     
+    </div>
+
+    
+  </div>
+
+  <ng-template #noCertif>
+    <h1>No Request</h1>
+  </ng-template>
+
+</div>

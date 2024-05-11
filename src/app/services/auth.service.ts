@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Login, LoginUser, RegisterUser, User, uUser} from '../interfaces/User';
-import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { LoginUser, RegisterUser, User, uUser} from '../interfaces/User';
+import { ansCertif } from '../interfaces/Certif';
+import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -17,6 +18,12 @@ export class AuthService {
   }  
   getCertifs() : Observable<any> {
     return this.http.get<any>(`${this.apiServerUrl}/admin/certifs`);
+  }
+  getdCertifs() : Observable<any> {
+    return this.http.get<any>(`${this.apiServerUrl}/admin/done-certifs`);
+  }
+  ansCertif(ans : ansCertif) : Observable<any> {
+    return this.http.post<any>(`${this.apiServerUrl}/admin/certif`, ans);
   }
   registerUser(user:RegisterUser):Observable<any>{
     return this.http.post<any>(`${this.apiServerUrl}/admin/add_user`, user)

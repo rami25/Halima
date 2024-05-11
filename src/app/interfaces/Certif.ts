@@ -7,5 +7,12 @@ export interface Certif{
     cin : number,
     gsm : number,
     date : Date,
-    duree : number
+    duree : number,
+    status : string,
+    answerDate : Date
+}
+
+export interface ansCertif {
+    _id : string,
+    ans : string
 }

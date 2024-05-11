@@ -26,12 +26,6 @@ export class AddUserComponent implements OnInit {
     });
   }
 
-  // selectRole(event:any){
-
-  //   this.role=event.target.value;
-
-  // }
-
   onSubmit() {
     this.name=this.form.value.name;
     this.email=this.form.value.email;

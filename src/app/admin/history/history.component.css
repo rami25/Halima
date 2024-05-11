@@ -1,7 +1,13 @@
+.teams-header{
+  margin-right: 50px;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .container {
   max-width: 1024px;
   position: relative;
-
   margin-top: 50px;
 }
 
@@ -65,6 +71,13 @@
   justify-content: space-evenly;
   align-items: center;
   margin: 30px;
+}
+.data {
+  width: 20%; 
+  padding-bottom : 20px;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
 }
 
 .pagination {
@@ -182,15 +195,4 @@
 
   color: white;
   cursor: pointer;
-}
-
-.add-diagnosis {
-  background-color: #d1411e;
-
-  padding: 5px;
-  width: 50px;
-  color: #fff;
-
-  cursor: pointer;
-  font-size: 13px;
 }

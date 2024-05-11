@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'angular-highcharts';
+import { Certif } from 'src/app/interfaces/Certif';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -8,11 +10,19 @@ import { Chart } from 'angular-highcharts';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private authService : AuthService) { }
+  certifs! : Certif[]
   ngOnInit(): void {
+    this.getCertifs()
   }
 
+  getCertifs(){
+    this.authService.getCertifs()
+      .subscribe(certificates => {
+        this.certifs = certificates;
+        this.certifs = this.certifs.slice(0, 4);
+    });    
+  }
 
   lineChart = new Chart({
     chart: {
@@ -58,7 +68,7 @@ export class HomeComponent implements OnInit {
     title: {
       verticalAlign: 'middle',
       floating: true,
-      text: 'Diseases',
+      text: 'Certificates',
     },
   
     legend: {

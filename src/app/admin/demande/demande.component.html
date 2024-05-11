@@ -49,7 +49,7 @@
 
             <span class="data">{{certif.date | date:'dd/MM/yyyy'}}</span>
 
-            <span class="data">{{certif.duree}}</span>
+            <span class="data">{{certif.duree | date:'dd/MM/yyyy'}}</span>
 
             <span class="u-diagnosis data" (click)="showAdd1(certif._id)">Accept</span>
 
@@ -79,7 +79,7 @@
         <div class="delete-cancel">
           <button class="cancel" (click)="showAdd(1233)">Cancel</button>
 
-          <button class="delete" (click)="deleteCertif()">Delete</button>
+          <button class="delete" (click)="deleteCertif()">Reject</button>
         </div>
 
       </div>

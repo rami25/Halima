@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddUserComponent } from './add-user/add-user.component';
-
 import { AdminComponent } from './admin.component';
-import { DoctorsComponent } from './doctors/doctors.component';
 import { DemandeComponent } from './demande/demande.component';
+import { HistoryComponent } from './history/history.component';
 import { UsersComponent } from './users/users.component';
 import { HomeComponent } from './home/home.component';
 import { CommentsComponent } from './comments/comments.component';
@@ -24,8 +23,8 @@ const routes: Routes = [
         component: DemandeComponent,
       },
       {
-        path: 'doctors',
-        component: DoctorsComponent,
+        path: 'history',
+        component: HistoryComponent,
       },
       {
         path: 'users',

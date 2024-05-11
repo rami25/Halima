@@ -30,7 +30,6 @@ export class UsersComponent implements OnInit {
     });
   }
   p: number = 1;
-  collection: any[] = [1];
   close: boolean = false;
   close1: boolean = false;
   faAdd = faAdd;
@@ -73,11 +72,6 @@ export class UsersComponent implements OnInit {
     window.location.reload();
   }
 
-  // selectRole(event:any){
-
-  //   this.role=event.target.value;
-
-  // }
   updateUser(){
     this.name=this.form.value.name;
     this.email=this.form.value.email;
