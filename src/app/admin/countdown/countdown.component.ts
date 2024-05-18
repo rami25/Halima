@@ -8,7 +8,6 @@ import { interval, Subscription } from 'rxjs';
 })
 export class CountdownComponent implements OnInit, OnDestroy, OnChanges {
   @Input() targetDate!: string; 
-  @Input() targetTime!: string; 
 
   private subscription!: Subscription;
   public timeRemaining: any = {};
@@ -19,7 +18,7 @@ export class CountdownComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['targetDate'] || changes['targetTime']) {
+    if (changes['targetDate']){
       this.startCountdown();
     }
   }
@@ -42,12 +41,10 @@ export class CountdownComponent implements OnInit, OnDestroy, OnChanges {
 
   private updateCountdown() {
     const now = new Date().getTime();
-    const targetTime = this.realTime(this.targetTime);
-    const date = this.combineDateTime(this.targetDate, targetTime)
-    const target = new Date(date).getTime();
+    const target = new Date(this.targetDate).getTime();
 
     if (isNaN(target)) {
-      console.error(`Invalid date or time: ${this.targetDate} ${this.targetTime}`);
+      console.error(`Invalid date or time: ${this.targetDate}`);
       this.timeRemaining = {
         days: 'NaN',
         hours: 'NaN',
@@ -79,25 +76,5 @@ export class CountdownComponent implements OnInit, OnDestroy, OnChanges {
   allComponentsEqualZero(): boolean {
     const { days, hours, minutes, seconds } = this.timeRemaining;
     return days <= 0 && hours <= 0 && minutes <= 0 && seconds <= 0;
-  }
-  realTime(timeString: string): string {
-    const timeMapping: { [key: string]: string } = {
-      '9h': '09:00:00',
-      '10h': '10:00:00',
-      '11h': '11:00:00',
-      '15h': '15:00:00',
-      '16h': '16:00:00'
-    };
-
-    return timeMapping[timeString] || '00:00:00';
-  }
-
-  combineDateTime(dateString: string, timeString: string): Date {
-    const date = new Date(dateString);
-    const [hours, minutes, seconds] = timeString.split(':').map(Number);
-    date.setHours(hours);
-    date.setMinutes(minutes);
-    date.setSeconds(seconds);
-    return date;
   }
 }
