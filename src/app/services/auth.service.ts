@@ -13,6 +13,9 @@ export class AuthService {
   private apiServerUrl = environment.apiBaseUrl
 
   constructor(private http:HttpClient) { }
+  getReservs(): Observable<any> {
+    return this.http.get<any>(`${this.apiServerUrl}/admin/reservs`);
+  }  
   getComments(): Observable<any> {
     return this.http.get<any>(`${this.apiServerUrl}/admin/comments`);
   }  

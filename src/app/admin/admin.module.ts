@@ -17,6 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DemandeComponent } from './demande/demande.component';
 import { CommentsComponent } from './comments/comments.component';
 import { HistoryComponent } from './history/history.component';
+import { AppointmentsComponent } from './appointments/appointments.component';
+import { CountdownComponent } from './countdown/countdown.component';
 
 
 @NgModule({
@@ -29,6 +31,8 @@ import { HistoryComponent } from './history/history.component';
     DemandeComponent,
     CommentsComponent,
     HistoryComponent,
+    AppointmentsComponent,
+    CountdownComponent,
     
   ],
   imports: [

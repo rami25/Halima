@@ -1,0 +1,52 @@
+<div class="teams-header">
+  <h1 style="font-size : 25px; color: rgb(50, 50, 124)"><b>RESERVATIONS</b></h1>
+</div>
+<div class="wrapper">
+  <div class="container">
+    <div class="patient-header">
+      <span style="position: relative; right : 90px">Name</span>
+
+      <span style="position: relative; right : 120px">Email</span>
+
+      <span style="position: relative; right : 160px">Date</span>
+
+      <span style="position: relative; right : 212px">At</span>
+
+      <span style="position: relative; right : 90px">Status</span>
+    </div>
+
+    <div class="orders-body" *ngIf="reservs">
+      <div *ngIf="reservs.length; else noReserv">
+        <div
+          class="patient-body"
+          *ngFor="
+            let reserv of reservs | paginate: { itemsPerPage: 4, currentPage: p }
+          "
+        >
+          <div class="patient-container">
+            <span class="data">{{reserv.nom}}</span>
+
+            <span class="data">{{reserv.email}}</span>
+
+            <span class="data">{{reserv.date | date: 'dd/MM/yyyy'}}</span>
+
+            <span class="data">{{reserv.time}}</span>
+
+            <app-countdown style ="position:relative;left:10px;width:75%" class="data" [targetDate]="reserv.date" [targetTime]="reserv.time"></app-countdown>
+          </div>
+        </div>
+      </div>
+      <pagination-controls
+      (pageChange)="p = $event"
+      class="pagination"
+    ></pagination-controls>
+     
+    </div>
+
+    
+  </div>
+
+  <ng-template #noReserv>
+    <h1>No Reservation</h1>
+  </ng-template>
+</div>

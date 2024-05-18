@@ -1,0 +1,12 @@
+<div class="countdown">
+  <div *ngIf="!isFinished">
+    <span>{{ timeRemaining.days }} Days,</span>
+    <span> {{ timeRemaining.hours }} Hours,</span>
+    <span> {{ timeRemaining.minutes }} Minutes,</span>
+    <span> {{ timeRemaining.seconds }} Seconds</span>
+    <span style="color : green"><b> before start</b></span> 
+  </div>
+  <div style="color : red" *ngIf="isFinished">
+    <b>Finished</b>
+  </div>
+</div>

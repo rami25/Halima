@@ -7,6 +7,7 @@ import { HistoryComponent } from './history/history.component';
 import { UsersComponent } from './users/users.component';
 import { HomeComponent } from './home/home.component';
 import { CommentsComponent } from './comments/comments.component';
+import { AppointmentsComponent } from './appointments/appointments.component';
 
 const routes: Routes = [
   {
@@ -38,9 +39,11 @@ const routes: Routes = [
       {
         path : 'comments',
         component : CommentsComponent
+      },
+      {
+        path : 'appointments',
+        component : AppointmentsComponent
       }
-
-     
     ],
   },
 ];
